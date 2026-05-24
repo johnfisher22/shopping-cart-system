@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.header{
+    background:#0ea5e9;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+.header h1{
+    font-size:32px;
+}
+
+.form-section{
+    padding:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.input-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.input-box label{
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#1e293b;
+}
+
+.input-box input,
+.input-box select{
+    padding:14px;
+    border:2px solid #cbd5e1;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+    border-color:#0ea5e9;
+    outline:none;
+}
+
+.buttons{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+button{
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    color:white;
+}
+
+.add-btn{
+    background:#16a34a;
+}
+
+.view-btn{
+    background:#2563eb;
+}
+
+.search-btn{
+    background:#f59e0b;
+}
+
+.checkout-btn{
+    background:#dc2626;
+}
+
+button:hover{
+    transform:scale(1.03);
+    opacity:0.9;
+}
+
+.result{
+    margin-top:30px;
+    background:#f1f5f9;
+    padding:20px;
+    border-radius:10px;
+    min-height:150px;
+    white-space:pre-line;
+}
+
+@media(max-width:768px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .buttons{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>SHOPPING CART SYSTEM</h1>
+    </div>
+
+    <div class="form-section">
+
+        <!-- FORM -->
+        <form action="https://johnfisher22.github.io/shopping-cart-system/" method="POST">
+
+            <div class="grid">
+
+                <div class="input-box">
+                    <label>Operation</label>
+
+                    <select name="operation" required>
+                        <option value="">Select Operation</option>
+                        <option value="add">1 ADD ITEM</option>
+                        <option value="view">2 VIEW CART</option>
+                        <option value="search">9 SEARCH ITEM</option>
+                        <option value="checkout">7 CHECKOUT</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label>Item Type</label>
+
+                    <select name="type">
+                        <option value="Book">Book</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Grocery">Grocery</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label>Item ID</label>
+                    <input type="number" name="id" required>
+                </div>
+
+                <div class="input-box">
+                    <label>Item Name</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="input-box">
+                    <label>Price</label>
+                    <input type="number" step="0.01" name="price">
+                </div>
+
+                <div class="input-box">
+                    <label>Quantity</label>
+                    <input type="number" name="quantity">
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="add-btn" type="submit">
+                    ADD ITEM
+                </button>
+
+                <button class="view-btn" type="submit">
+                    VIEW CART
+                </button>
+
+                <button class="search-btn" type="submit">
+                    SEARCH ITEM
+                </button>
+
+                <button class="checkout-btn" type="submit">
+                    CHECKOUT
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="result">
+
+            <h3>System Output</h3>
+
+            <p>
+                Your servlet response will display here.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
